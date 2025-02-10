@@ -69,11 +69,9 @@
     <img src="https://raw.githubusercontent.com/Anto161062/20_tramonto/main/tramonto.png" alt="Profumo 20 Tramonto" class="product-image">
     <div class="order-section">
         <div class="order-box">
-            <p>200ml - 20.00€</p>
-            <input type="number" id="quantity200" value="0" min="0" onchange="updateTotal()">
         </div>
         <div class="order-box">
-            <p>500ml - 35.00€</p>
+            <p>500ml - 18.00€</p>
             <input type="number" id="quantity500" value="0" min="0" onchange="updateTotal()">
         </div>
     </div>
@@ -86,14 +84,12 @@
 
     <script>
         function updateTotal() {
-            const quantity200 = parseInt(document.getElementById("quantity200").value) || 0;
             const quantity500 = parseInt(document.getElementById("quantity500").value) || 0;
             const total = (quantity200 * 20 + quantity500 * 35).toFixed(2);
             document.getElementById("total").textContent = `Totale: ${total}€`;
         }
 
         function sendOrder() {
-            const quantity200 = parseInt(document.getElementById("quantity200").value) || 0;
             const quantity500 = parseInt(document.getElementById("quantity500").value) || 0;
 
             if (quantity200 === 0 && quantity500 === 0) {
@@ -104,11 +100,9 @@
             let message = `🟢 *ORDINE MYSENZA1* 🟢\n\n`;
             message += `📌 *Ciao! Ecco il mio ordine:*\n\n`;
 
-            if (quantity200 > 0) {
-                message += `🔵 *Anima* 200ml × ${quantity200} = *${(quantity200 * 20).toFixed(2)}€*\n`;
-            }
+          
             if (quantity500 > 0) {
-                message += `🔵 *Anima* 500ml × ${quantity500} = *${(quantity500 * 35).toFixed(2)}€*\n`;
+                message += `🔵 *Tramonto* 500ml × ${quantity500} = *${(quantity500 * 35).toFixed(2)}€*\n`;
             }
 
             message += `------------------------------------\n`;
